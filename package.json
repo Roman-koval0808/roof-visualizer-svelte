@@ -1,0 +1,32 @@
+{
+  "name": "roof-visualizer-svelte",
+  "version": "1.0.0",
+  "description": "Drop this into your existing SvelteKit project and let visitors swap roof materials on their own home photos — seamlessly, with your API key hidden securely on the server.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite dev",
+    "build": "vite build",
+    "postbuild": "mkdir -p logs && (pm2 reload ecosystem.config.cjs --update-env 2>/dev/null || pm2 start ecosystem.config.cjs)",
+    "preview": "vite preview",
+    "start": "node build",
+    "pm2:start": "pm2 start ecosystem.config.cjs",
+    "pm2:reload": "pm2 reload ecosystem.config.cjs",
+    "pm2:stop": "pm2 stop ecosystem.config.cjs",
+    "pm2:delete": "pm2 delete roof-visualizer"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@sveltejs/adapter-node": "^5.5.4",
+    "@sveltejs/kit": "^2.53.4",
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "svelte": "^5.53.7",
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "svelte-before-after": "^1.0.1"
+  }
+}
